@@ -1,0 +1,35 @@
+--BEBERAPA JENIS JENIS DATA
+-- INT (menyimpan bilangan bulat)
+-- VARCHAR (n) (menyimpan teks dengan panjang maksimum n karakter)
+-- DATE (format tanggal)
+-- CHAR (n) ( menyimpan teks sesuai dengan panjang tetap sebanyak n karakter)
+-- TEXT (menyimpan teks panjang tanpa batasan)
+-- DECIMAL (p,s) ( menyimpan angka dengan jumlah digit total (p) dan digit desimal (s)
+-- TIMESTAMP (menyimpan tanggal serta waktu)
+-- BOOLEAN (menyimpan nilai TRUE atau FALSE)
+
+
+--Membuat tabel dengan judul shopping_behavior
+
+create TABLE shopping_behavior (
+  		Customer_ID INT PRIMARY KEY, 		-- primary key bersifat unik untuk mengidentifikasi  data
+  		Age INT,							-- usia dalam bilangan bulat
+  		Gender CHAR (1),					-- 'M' = MALE and 'F' = FEMALE
+  		Item_Purchased VARCHAR (50),		-- nama produk yang dibeli
+  		Category VARCHAR (30)				-- kategori produk yang dibeli
+  		Purchase_Amount_USD INT,			-- nominal pembelian dengan angka bulat
+  		Location VARCHAR (50),				-- alamat kota pembeli
+  		Size VARCHAR (2),					-- ukuran pakaian
+  		Color VARCHAR (10),					-- warna pakaian
+  		Season ENUM ('Spring', 'Summer', 'Fall', 'Winter'), -- pilihan musim
+  		Review_Rating DECIMAL (2,1),		-- rating pembelian dengan 1 angka desimal
+  		Subscription_Status BOOLEAN,		-- Yes = menggunakan diskon, No = tidak menggunakan diskon
+  		Shipping_Type ENUM ('Standard', 'Express', 'Overnight'), --Pilihan pengiriman
+  		Discount_Applied BOOLEAN,			-- True = jika diskon digunakan
+  		Promo_Code_Used VARCHAR (10),		-- kode promo
+  		Previous_Purchases INT,				-- nominal pembelian sebelumnya
+  		Payment_Method ENUM ('Venmo', 'Cash', 'Paypal', 'Debit card', 'Credit card'), -- opsi pembayarab
+  		Frequency_of_Purchases ENUM ( 'Daily', 'Weekly', 'Monthly', 'Rarely') -- frekueansi pembelian
+  );
+  
+  SELECT * FROM shopping_behavior;
