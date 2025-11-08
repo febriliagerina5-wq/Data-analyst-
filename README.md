@@ -10,7 +10,7 @@ This repository documents my progress, projects, and notes as I learn data analy
 - Practice real datasets analysis
 
 ## 📓 Learning Notes
-See my [notes folder](notes/) for step-by-step study logs.
+See my [SQL notes] for step-by-step study logs.
 
 ## 📁 Project List
 Cooming soon
