@@ -16,20 +16,51 @@ create TABLE shopping_behavior (
   		Age INT,							-- usia dalam bilangan bulat
   		Gender CHAR (1),					-- 'M' = MALE and 'F' = FEMALE
   		Item_Purchased VARCHAR (50),		-- nama produk yang dibeli
-  		Category VARCHAR (30)				-- kategori produk yang dibeli
+  		Category VARCHAR (30),				-- kategori produk yang dibeli
   		Purchase_Amount_USD INT,			-- nominal pembelian dengan angka bulat
   		Location VARCHAR (50),				-- alamat kota pembeli
-  		Size VARCHAR (2),					-- ukuran pakaian
+  		Size CHAR (1),						-- ukuran pakaian
   		Color VARCHAR (10),					-- warna pakaian
-  		Season ENUM ('Spring', 'Summer', 'Fall', 'Winter'), -- pilihan musim
+  		Season  VARCHAR(15), 				-- pilihan musim
   		Review_Rating DECIMAL (2,1),		-- rating pembelian dengan 1 angka desimal
   		Subscription_Status BOOLEAN,		-- Yes = menggunakan diskon, No = tidak menggunakan diskon
-  		Shipping_Type ENUM ('Standard', 'Express', 'Overnight'), --Pilihan pengiriman
-  		Discount_Applied BOOLEAN,			-- True = jika diskon digunakan
+  		Shipping_Type VARCHAR(20), 			--Pilihan pengiriman
+  		Discount_Applied VARCHAR (5),		-- Yes = jika diskon digunakan
   		Promo_Code_Used VARCHAR (10),		-- kode promo
   		Previous_Purchases INT,				-- nominal pembelian sebelumnya
-  		Payment_Method ENUM ('Venmo', 'Cash', 'Paypal', 'Debit card', 'Credit card'), -- opsi pembayarab
-  		Frequency_of_Purchases ENUM ( 'Daily', 'Weekly', 'Monthly', 'Rarely') -- frekueansi pembelian
+  		Payment_Method VARCHAR (15), 		-- opsi pembayarab
+  		Frequency_of_Purchases VARCHAR (20) -- frekueansi pembelian
   );
   
-  SELECT * FROM shopping_behavior;
+  insert into shopping_behavior (
+   		Customer_ID, 
+  		Age,						
+  		Gender,					
+  		Item_Purchased,		
+  		Category,				
+  		Purchase_Amount_USD,			
+  		Location,				
+  		Size,			
+  		Color,
+  		Season,
+  		Review_Rating,
+  		Subscription_Status,
+  		Shipping_Type,
+  		Discount_Applied,
+  		Promo_Code_Used,
+  		Previous_Purchases,
+  		Payment_Method,
+  		Frequency_of_Purchases)
+VALUES 
+(1,55,'M','Blouse','Clothing',53,'Kentucky','L','Gray','Winter',3.1,'Yes','Express','Yes','Yes',14,'Venmo','Fortnightly'),
+(2,19,'M','Sweater','Clothing',64,'Maine','L','Maroon','Winter',3.1,'Yes','Express','Yes','Yes',2,'Cash','Fortnightly'),
+(3,50,'F','Jeans','Clothing',73,'Massachusetts','S','Maroon','Spring',3.1,'Yes','Free Shipping','Yes','Yes',23,'Credit Card','Weekly'),
+(4,21,'F','Sandals','Footwear',90,'Rhode Island','M','Maroon','Spring',3.5,'Yes','Next Day Air','Yes','Yes',49,'PayPal','Weekly'),
+(5,45,'M','Blouse','Clothing',49,'Oregon','M','Turquoise','Spring',2.7,'Yes','Free Shipping','Yes','Yes',31,'PayPal','Annually');
+SELECT * FROM Shopping_behavior;
+
+--UNTUK MELIHAT SELURUH TABLE
+SELECT* FROM Shopping_bahavior;
+
+--Untuk menghapus tabel
+DROP TABLE Shopping_behavior;
